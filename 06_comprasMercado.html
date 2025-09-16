@@ -11,14 +11,14 @@
 
     //Processamento
     let numeros = [];
-    for(let numero of lista){
-        if(Number(numero)){
-            numeros.push(numero);
+    let resultado = 0;
+    for(let item of lista){
+        if(typeof item === "number"){
+            numeros.push(item);
+            resultado += item;
         }
     }
-    for( let soma of numeros){
-        soma+= soma
-    }
     //Saída
+    console.log(resultado)
 
 </script>

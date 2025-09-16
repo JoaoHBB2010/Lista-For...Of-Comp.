@@ -8,11 +8,26 @@
     */
 
     //Entrada
-
+    let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
 
     //Processamento
+    let gosta = "";
+    let favorita = [];
+    let naoGosta = [];
+
+    for(let cor of cores){
+        gosta = prompt(`Você gosta da cor ${cor}?(S)sim ou (N)não`).toUpperCase().trim()
+        if(gosta === "S"){
+            favorita.push(cor)
+        }
+        else{
+            naoGosta.push(cor)
+        }
+    }
 
 
     //Saída
+    console.log(naoGosta)
+    document.write(`Suas cores preferidas são : ${favorita}. <br> E você gosta de ${favorita.length} cores.`)
 
 </script>
