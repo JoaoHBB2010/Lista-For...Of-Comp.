@@ -16,9 +16,18 @@
   let listaNomes = [];
 
   for (let nome of nomes) {
-    listaNomes.push(nome);
+    if (
+      nome.toUpperCase().indexOf("Á") >= 0 ||
+      nome.toUpperCase().indexOf("É") >= 0 ||
+      nome.toUpperCase().indexOf("Í") >= 0 ||
+      nome.toUpperCase().indexOf("Ó") >= 0 ||
+      nome.toUpperCase().indexOf("Ú") >= 0
+    ) {
+      listaNomes.push(nome.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u"));
+    }
   }
 
   //Saída
   document.write(listaNomes);
+  console.log(listaNomes);
 </script>
