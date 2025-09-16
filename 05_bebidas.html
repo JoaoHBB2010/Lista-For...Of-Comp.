@@ -7,11 +7,26 @@
     */
 
     //Entrada
+    let bebidas = ["Cerveja", "Vinho", "Suco Natural", "Tequila", "Água", "Refrigerante", "Vodka"];
 
 
     //Processamento
+    let temAlcool = [];
+    let semAlcool = [];
+    let tem = "";
+
+    for(let alcool of bebidas){
+        tem = prompt(`A bebida ${alcool},tem álcool?S-sim ou N-não`).toUpperCase().trim()
+        if(tem == "S"){
+            temAlcool.push(alcool);
+        }
+        else if(tem == "N"){
+            semAlcool.push(alcool);
+        }
+    }
 
 
     //Saída
+    document.write(`As permitidas para menores de 18 são: ${semAlcool}`)
 
 </script>
