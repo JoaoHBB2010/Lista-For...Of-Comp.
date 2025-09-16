@@ -11,8 +11,48 @@
     let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
 
     //Processamento
+    let estado = "";
+    let sc = [];
+    let rg = [];
+    let pr = [];
+
+    for(let cidade of cidades){
+        estado = prompt(`De qual estado pertence a cidade ${cidade}? SC ou RG ou PR?`).trim().toUpperCase();
+        if(estado == "SC"){
+            sc.push(cidade);
+        }
+        else if(estado == "RG"){
+            rg.push(cidade);
+        }
+        else if(estado == "PR"){
+            pr.push(cidade);
+        }
+        else{
+            alert("ERRO");
+        }
+    }
 
 
     //Saída
+    if(sc.length >= rg.length && rg.length >= pr.length){
+        document.write(`Santa Catarina (SC): ${sc} <br> Rio Grande do Sul (RG): ${rg} <br> Paraná (PR): ${pr}`);
+    }
+    else if(rg.length >= sc.length && sc.length >= pr.length){
+         document.write(`Rio Grande do Sul (RG): ${rg} <br> Santa Catarina (SC): ${sc} <br> Paraná (PR): ${pr}`);
+    }
+    else if(pr.length >= sc.length && sc.length >= rg.length){
+         document.write(`Paraná (PR): ${pr} <br> Rio Grande do Sul (RG): ${rg} <br> Santa Catarina (SC): ${sc}  `);
+    }
+    else if(sc.length >= pr.length && pr.length >= rg.length){
+         document.write(`Santa Catarina (SC): ${sc} <br> Paraná (PR): ${pr} <br> Rio Grande do Sul (RG): ${rg}    `);
+    }
+    else if(rg.length >= pr.length && pr.length >= sc.length){
+         document.write(`Rio Grande do Sul (RG): ${rg} <br>  Paraná (PR): ${pr} <br>     Santa Catarina (SC): ${sc} `);
+    }
+    else if(pr.length >= rg.length && rg.length >= sc.length){
+         document.write(`Paraná (PR): ${pr} <br> Rio Grande do Sul (RG): ${rg} <br>       Santa Catarina (SC): ${sc} `);
+    }
+
+
 
 </script>
